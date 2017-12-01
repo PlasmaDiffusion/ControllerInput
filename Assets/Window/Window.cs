@@ -23,12 +23,8 @@ public class ControllerWindow : EditorWindow {
     public static extern float getTrigger(int player, int trigger);
     [DllImport("ControllerInput")]
     public static extern void removeControllers();
-
-    [MenuItem("Window/Controller Window")]
-	// Use this for initialization
-	public static void ShowWindow() {
-        EditorWindow.GetWindow(typeof(ControllerWindow));
-	}
+    private Texture2D controllerTexture;
+    private Texture2D circleTexture;
 
     public bool inputA;
     public bool inputB;
@@ -63,16 +59,31 @@ public class ControllerWindow : EditorWindow {
 
     float trig;
 
+    [MenuItem("Window/Controller Window")]
+	// Use this for initialization
+	public static void ShowWindow() {
+        EditorWindow.GetWindow(typeof(ControllerWindow));
+	}
+
+
     void OnGUI()
     {
-        guiA = EditorGUILayout.Toggle("A", inputA);
-        guiB = EditorGUILayout.Toggle("B", inputB);
-        trig = EditorGUILayout.Slider(rightTrigger, -1.0f, 1.0f);
+        //GUILayout.Label(controllerTexture);
+
+
+        if (inputA) EditorGUI.DrawTextureTransparent(new Rect(340, 100, 25, 25), circleTexture);
+        EditorGUI.DrawTextureTransparent(new Rect(0, 0, 528, 297), controllerTexture);
+
+        Repaint();
     }
 
     // Use this for initialization
     void Awake()
     {
+     
+       controllerTexture = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Images/Xbox One Controller.jpg", typeof(Texture2D));
+       circleTexture = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Images/Circle.png", typeof(Texture2D));
+
         createControllers(1);
     }
 
