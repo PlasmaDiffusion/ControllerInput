@@ -32,3 +32,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.idb
+*.pdb
+*.pdb
+*.pdb
+*.pdb

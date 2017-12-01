@@ -1,19 +1,21 @@
-﻿Build started 29/11/2017 8:36:22 PM.
-     1>Project "C:\Users\Scott\Documents\Visual Studio 2015\Projects\Xinput Test\Xinput Test\Xinput Test.vcxproj" on node 2 (Build target(s)).
+﻿Build started 01/12/2017 12:07:06 PM.
+     1>Project "C:\Users\Public\Documents\Unity Projects\ControllerInput\Xinput Test\Xinput Test\Xinput Test.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Controller.cpp Wrapper.cpp
          Wrapper.cpp
-     1>c:\users\scott\documents\visual studio 2015\projects\xinput test\xinput test\wrapper.cpp(42): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\scott\documents\visual studio 2015\projects\xinput test\xinput test\wrapper.cpp(52): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\public\documents\unity projects\controllerinput\xinput test\xinput test\wrapper.cpp(44): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\public\documents\unity projects\controllerinput\xinput test\xinput test\wrapper.cpp(58): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\public\documents\unity projects\controllerinput\xinput test\xinput test\wrapper.cpp(138): warning C4800: 'float': forcing value to bool 'true' or 'false' (performance warning)
          Controller.cpp
          Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Scott\Documents\Visual Studio 2015\Projects\Xinput Test\x64\Debug\Xinput Test.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Scott\Documents\Visual Studio 2015\Projects\Xinput Test\x64\Debug\Xinput Test.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Scott\Documents\Visual Studio 2015\Projects\Xinput Test\x64\Debug\Xinput Test.lib" /MACHINE:X64 /DLL x64\Debug\Controller.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Public\Documents\Unity Projects\ControllerInput\Xinput Test\x64\Debug\Xinput Test.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Public\Documents\Unity Projects\ControllerInput\Xinput Test\x64\Debug\Xinput Test.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Public\Documents\Unity Projects\ControllerInput\Xinput Test\x64\Debug\Xinput Test.lib" /MACHINE:X64 /DLL x64\Debug\Controller.obj
          x64\Debug\Wrapper.obj
-            Creating library C:\Users\Scott\Documents\Visual Studio 2015\Projects\Xinput Test\x64\Debug\Xinput Test.lib and object C:\Users\Scott\Documents\Visual Studio 2015\Projects\Xinput Test\x64\Debug\Xinput Test.exp
-         Xinput Test.vcxproj -> C:\Users\Scott\Documents\Visual Studio 2015\Projects\Xinput Test\x64\Debug\Xinput Test.dll
-     1>Done Building Project "C:\Users\Scott\Documents\Visual Studio 2015\Projects\Xinput Test\Xinput Test\Xinput Test.vcxproj" (Build target(s)).
+         LINK : C:\Users\Public\Documents\Unity Projects\ControllerInput\Xinput Test\x64\Debug\Xinput Test.dll not found or not built by the last incremental link; performing full link
+            Creating library C:\Users\Public\Documents\Unity Projects\ControllerInput\Xinput Test\x64\Debug\Xinput Test.lib and object C:\Users\Public\Documents\Unity Projects\ControllerInput\Xinput Test\x64\Debug\Xinput Test.exp
+         Xinput Test.vcxproj -> C:\Users\Public\Documents\Unity Projects\ControllerInput\Xinput Test\x64\Debug\Xinput Test.dll
+     1>Done Building Project "C:\Users\Public\Documents\Unity Projects\ControllerInput\Xinput Test\Xinput Test\Xinput Test.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.07
+Time Elapsed 00:00:01.55

@@ -40,7 +40,6 @@ Controller::Controller()
 	rightStickX = 0.0f;
 	rightStickY = 0.0f;
 
-	controllerCount++;
 }
 
 void Controller::setNumber(int value)
@@ -96,7 +95,10 @@ void Controller::updateButtons()
 	inputB = checkInput(XINPUT_GAMEPAD_B);
 	inputY = checkInput(XINPUT_GAMEPAD_Y);
 	inputX = checkInput(XINPUT_GAMEPAD_X);
-	state.dwPacketNumber;
+	
+	inputRB = checkInput(XINPUT_GAMEPAD_RIGHT_SHOULDER);
+	inputLB = checkInput(XINPUT_GAMEPAD_LEFT_SHOULDER);
+
 	inputStart = checkInput(XINPUT_GAMEPAD_START);
 	inputBack = checkInput(XINPUT_GAMEPAD_BACK);
 
@@ -108,6 +110,5 @@ void Controller::updateButtons()
 	inputDpadRight = checkInput(XINPUT_GAMEPAD_DPAD_RIGHT);
 	inputDpadLeft = checkInput(XINPUT_GAMEPAD_DPAD_LEFT);
 
-	inputRB = checkInput(XINPUT_GAMEPAD_START);
-	inputLB = checkInput(XINPUT_GAMEPAD_START);
+
 }

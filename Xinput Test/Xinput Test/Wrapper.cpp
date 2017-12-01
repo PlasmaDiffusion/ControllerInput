@@ -39,16 +39,22 @@ void createControllers(int amount)
 {
 	controllers = new Controller[amount];
 
+	Controller::controllerCount = amount;
+
 	for (unsigned int i = 0; i < amount; i++)
 	{
 		controllers[i].setNumber(i);
 		controllers[i].checkIfConnected();
+
 	}
 }
 
 //Make sure the controller is still conected, and update inputs
 void updateControllers()
 {
+	//Failsafe from crashing
+	if (!controllers) return;
+
 	for (unsigned int i = 0; i < Controller::controllerCount; i++)
 	{
 		
@@ -63,94 +69,119 @@ void updateControllers()
 
 bool getButton(int player, int button)
 {
+	if (!controllers) return false;
+
+	bool returnVal;
+
 	switch (button)
 	{
 	case 0:
-		return  controllers[player].inputA;
+		returnVal =  controllers[player].inputA;
 		break;
 	case 1:
-		return  controllers[player].inputB;
+		returnVal = controllers[player].inputB;
 		break;
 	case 2:
-		return  controllers[player].inputY;
+		returnVal = controllers[player].inputY;
 		break;
 	case 3:
-		return  controllers[player].inputX;
+		returnVal = controllers[player].inputX;
 		break;
 	case 4:
-		return  controllers[player].inputRB;
+		returnVal = controllers[player].inputRB;
 		break;
 	case 5:
-		return  controllers[player].inputLB;
+		returnVal = controllers[player].inputLB;
 		break;
 	case 6:
-		return  controllers[player].inputStart;
+		returnVal = controllers[player].inputStart;
 		break;
 	case 7:
-		return  controllers[player].inputBack;
+		returnVal = controllers[player].inputBack;
 		break;
 	case 8:
-		return  controllers[player].inputRightStick;
+		returnVal = controllers[player].inputRightStick;
 		break;
 	case 9:
-		return  controllers[player].inputLeftStick;
+		returnVal = controllers[player].inputLeftStick;
 		break;
-	default: return false;
+	default: returnVal = false;
+		break;
 	}
-
+	return returnVal;
 }
 
 bool getDpad(int player, int button)
 {
+	if (!controllers) return 0.0f;
+
+	float returnVal;
+
 	switch (button)
 	{
 	case 0:
-		return  controllers[player].inputDpadUp;
+		returnVal =  controllers[player].inputDpadUp;
 		break;
 	case 1:
-		return  controllers[player].inputDpadDown;
+		returnVal =  controllers[player].inputDpadDown;
 		break;
 	case 2:
-		return  controllers[player].inputDpadRight;
+		returnVal = controllers[player].inputDpadRight;
 		break;
 	case 3:
-		return  controllers[player].inputDpadLeft;
+		returnVal = controllers[player].inputDpadLeft;
 		break;	
-	default: return false;
+	default: returnVal = false;
+		break;
 	}
 
+	return returnVal;
 
 }
 
 float getThumbstick(int player, int axis)
 {
+	if (!controllers) return 0.0f;
+
+	float returnVal;
+
 	switch (axis)
 	{
 	case 0:
-		return  controllers[player].leftStickX;
+		returnVal =  controllers[player].leftStickX;
 		break;
 	case 1:
-		return  controllers[player].leftStickY;
+		returnVal = controllers[player].leftStickY;
 		break;
 	case 2:
-		return  controllers[player].rightStickX;
+		returnVal = controllers[player].rightStickX;
 		break;
 	case 3:
-		return  controllers[player].rightStickY;
+		returnVal = controllers[player].rightStickY;
 		break;
-	default: return 0.0f;
+	default: returnVal = 0.0f;
+		break;
 	}
+
+	return returnVal;
 }
 
 float getTrigger(int player, int trigger)
 {
+	if (!controllers) return 0.0f;
+
+	float returnVal = 0.0f;
+
 	if (trigger == 0)
-		return controllers[player].leftTrigger;
-	else if (trigger == 1) return controllers[player].rightTrigger;
-	else return 0.0f;
+		returnVal = controllers[player].leftTrigger;
+	else if (trigger == 1) returnVal = controllers[player].rightTrigger;
+
+
+	return returnVal;
 }
 
 void removeControllers()
 {
 	delete[] controllers;
+	controllers = NULL;
 }
