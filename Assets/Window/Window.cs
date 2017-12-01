@@ -4,6 +4,11 @@ using UnityEditor;
 using UnityEngine;
 using System.Runtime.InteropServices;
 
+//Scott Cooper 100580683
+//Lucas Harvey 100585553
+//Kenneth Ho 100583602
+
+//This is the window class with a controller image
 
 public class ControllerWindow : EditorWindow {
 
@@ -73,7 +78,7 @@ public class ControllerWindow : EditorWindow {
     void OnGUI()
     {
 
-        //Draw controller
+        //Draw controller (Googled xbox one controller. Its from https://ebgames.com.au/xbox-one-217314-Xbox-One-S-Wireless-Controller-Xbox-One
         EditorGUI.DrawTextureTransparent(new Rect(0, 0, 528, 297), controllerTexture);
 
         //Draw a circle over every input, also put a number based on what controller number it is

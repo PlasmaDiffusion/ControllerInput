@@ -1,4 +1,7 @@
 #pragma once
+//Scott Cooper 100580683
+//Lucas Harvey 100585553
+//Kenneth Ho 100583602
 
 extern "C"
 {

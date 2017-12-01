@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
 
+//Scott Cooper 100580683
+//Lucas Harvey 100585553
+//Kenneth Ho 100583602
+
 public class InputGetter : MonoBehaviour {
+
+    //Script for the demo. Uses input plugin
 
     [DllImport("InputPlugin")]
     public static extern void createControllers(int amount);

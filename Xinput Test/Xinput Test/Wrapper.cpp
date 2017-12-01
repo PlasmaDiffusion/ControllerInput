@@ -1,10 +1,15 @@
 #include "Wrapper.h"
 #include "Controller.h"
 
+//Scott Cooper 100580683
+//Lucas Harvey 100585553
+//Kenneth Ho 100583602
+
+//This is the plugin for controller input. It uses Xinput.
 
 Controller *controllers;
 
-/*
+/* Just main function for testing before exporting...
 int main()
 {
 
