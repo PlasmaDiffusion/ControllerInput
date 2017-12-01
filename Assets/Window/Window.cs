@@ -72,27 +72,49 @@ public class ControllerWindow : EditorWindow {
 
     void OnGUI()
     {
-        //GUILayout.Label(controllerTexture);
 
-
+        //Draw controller
         EditorGUI.DrawTextureTransparent(new Rect(0, 0, 528, 297), controllerTexture);
 
+        //Draw a circle over every input, also put a number based on what controller number it is
         for (int i = 0; i < controllerCount; i++)
         {
 
 
-            if (controller[i].inputA)
-            {
-                EditorGUI.DrawTextureTransparent(new Rect(340, 100, 25, 25), circleTexture);
-                EditorGUI.LabelField(new Rect(340, 100, 25, 25), (i + 1).ToString());
-            }
+            if (controller[i].inputA) drawCircle(344, 85, i);
+            if (controller[i].inputY) drawCircle(344, 36, i);
+            if (controller[i].inputX) drawCircle(320, 60, i);
+            if (controller[i].inputB) drawCircle(369, 62, i);
+
+            if (controller[i].inputLeftStick) drawCircle(159 + (controller[i].leftStickX * 5.0f), 60 + (controller[i].leftStickY * -5.0f), i);
+            if (controller[i].inputRightStick) drawCircle(300 + (controller[i].rightStickX * 5.0f), 115 + (controller[i].rightStickY * -5.0f), i);
+
+            if (controller[i].inputDpadRight) drawCircle(226, 119, i);
+            if (controller[i].inputDpadLeft) drawCircle(180, 119, i);
+            if (controller[i].inputDpadDown) drawCircle(204, 139, i);
+            if (controller[i].inputDpadUp) drawCircle(204, 97, i);
 
 
-        
+            if (controller[i].inputBack) drawCircle(229, 60, i);
+            if (controller[i].inputStart) drawCircle(279, 60, i);
+
+            if (controller[i].rightTrigger != 0.0f) drawCircle(350, 0, i);
+            if (controller[i].leftTrigger != 0.0f) drawCircle(154, 0, i);
+
+            if (controller[i].inputRB) drawCircle(345, 10, i);
+            if (controller[i].inputLB) drawCircle(159, 10, i);
+
         }
 
 
         Repaint();
+    }
+
+    void drawCircle(float x, float y, int player)
+    {
+        EditorGUI.DrawTextureTransparent(new Rect(x, y, 25, 25), circleTexture);
+        EditorGUI.LabelField(new Rect(x, y, 25, 25), (player + 1).ToString());
+
     }
 
     // Use this for initialization
@@ -103,9 +125,43 @@ public class ControllerWindow : EditorWindow {
        controllerTexture = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Images/Xbox One Controller.jpg", typeof(Texture2D));
        circleTexture = (Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Images/Circle.png", typeof(Texture2D));
 
+        for (int i = 0; i < controllerCount; i++)
+        {
+
+
+            //Default values
+            controller[i].inputA = false;
+            controller[i].inputB = false;
+            controller[i].inputX = false;
+            controller[i].inputY = false;
+
+            controller[i].inputStart = false;
+            controller[i].inputBack = false;
+
+            controller[i].inputLeftStick = false;
+            controller[i].inputRightStick = false;
+
+            controller[i].inputDpadRight = false;
+            controller[i].inputDpadLeft = false;
+            controller[i].inputDpadUp = false;
+            controller[i].inputDpadDown = false;
+            controller[i].inputRB = false;
+            controller[i].inputLB = false;
+
+            controller[i].rightTrigger = 0.0f;
+            controller[i].leftTrigger = 0.0f;
+
+            controller[i].leftStickX =0.0f;
+            controller[i].leftStickY = 0.0f;
+
+            controller[i].rightStickX = 0.0f;
+            controller[i].rightStickY = 0.0f;
+        }
+
         createControllers(4);
 
         Debug.Log("created controllers");
+        
     }
 
     // Update is called once per frame
